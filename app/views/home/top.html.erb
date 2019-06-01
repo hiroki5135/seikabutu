@@ -1,0 +1,10 @@
+<h1>投稿一覧</h1>
+<% @post.each do |post| %>
+<div class="posts-index-item">
+  <%= post.context %>  
+  <%= link_to("削除","/home/#{post.id}/destroy",{method: "post"}) %>
+  <%= link_to("編集","/home/#{post.id}/edit") %>
+
+</div>
+<% end %>
+<%= link_to("投稿する","/home/new")%>

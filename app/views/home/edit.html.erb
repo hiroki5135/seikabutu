@@ -1,0 +1,14 @@
+<%= form_tag("/home/#{@post.id}/update") do %>
+
+  <% @post.errors.full_messages.each do |message| %>
+            <div class="form-error">
+              <%= message %>
+            </div>
+          <% end %>
+
+<textarea name="context" ><%= @post.context %></textarea>
+<input type="submit" value="変更">
+
+
+<% end %>
+<%= link_to("投稿一覧","/home/top") %>
