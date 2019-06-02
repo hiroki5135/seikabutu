@@ -1,0 +1,10 @@
+<h1>ユーザー一覧</h1>
+<% @users.each do |user| %>
+<div class="posts-index-item">
+
+    <%= user.name %>
+    <% if @current_user.id == user.id %>
+      <%= link_to("削除","/user/#{user.id}/destroy",{method: "post"}) %>
+    <% end %>
+</div>
+<% end %>

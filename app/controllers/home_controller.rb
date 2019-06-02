@@ -8,7 +8,10 @@ class HomeController < ApplicationController
   end
 
   def create
-    @post = Post.new(context: params[:context])
+    @post = Post.new(
+      context: params[:context],
+      user_id: @current_user.id
+      )
     if @post.save
       flash[:notice] = "投稿しました"
       redirect_to("/home/top")
@@ -20,6 +23,7 @@ class HomeController < ApplicationController
   def destroy
     @post = Post.find_by(id: params[:id])
     @post.destroy
+    flash[:notice] = "投稿を削除しました"
     redirect_to("/home/top")
   end
 

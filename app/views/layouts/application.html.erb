@@ -10,13 +10,25 @@
   </head>
 
   <body>
-    
+
     <% if flash[:notice] %>
     <div class="flash">
       <%= flash[:notice] %>
     </div>
   <% end %>
 
+<% if @current_user %>
+  <%= link_to("ログアウト", "/logout", {method: :post}) %>
+  <%= link_to("ユーザー一覧", "/user/index") %>
+  <%= link_to("投稿一覧", "/home/top") %>
+   <div>
+    <%= "#{@current_user.name} でログイン中" %>
+   </div>
+
+<% else %>
+  <%= link_to("ログイン", "/login") %>
+  <%= link_to("新規登録","/user/new") %>
+<% end %>
     <%= yield %>
   </body>
 </html>
