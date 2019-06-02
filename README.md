@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ruby on rails で作成した、文字列投稿システムです。
+各々のユーザーごとに文字列を投稿します。
+自分の作成した文字列のみ削除、編集が可能です。
+まだ、制作途中ですので、機能を追加していきます。
+この成果物をダウンロードし、[rails db:migrate]を実行し、
+ブラウザで[localhost:3000/user/new]へアクセスすると、
+ユーザーの新規登録画面に移ります。
+そこで登録すると、その登録したユーザーでログインします。
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ruby version 2.5.1
+rails version 5.2.3
